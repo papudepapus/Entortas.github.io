@@ -447,7 +447,20 @@ input{
     }
 
     .information{
-        display: none;
+        display: block;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory; 
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    .information-content{
+        display: flex;
+        gap: 20px; 
+    }
+
+    .information-content > div {
+        min-width: 100%; 
+        scroll-snap-align: start;
     }
 
     .oferts{
@@ -461,12 +474,20 @@ input{
 
     .products{
         padding: 30px;
-
     }
 
     .product-content{
-        grid-template-columns: repeat(1, 1fr);
+        display: flex; 
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 0 15px; 
     }
+
+    .product{
+        min-width: 80%; 
+        scroll-snap-align: start;
+    }    
 
     .service{
         flex-direction: column;
